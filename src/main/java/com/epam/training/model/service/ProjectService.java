@@ -48,7 +48,7 @@ public class ProjectService implements IProjectService {
 	
 	@Override
 	public void addProject(Project proj) {
-
+		projectDataHandler.addProject(proj);
 	}
 
 	@Override

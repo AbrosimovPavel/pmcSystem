@@ -26,7 +26,7 @@ public class TaskService implements ITaskService {
 
 	@Override
 	public void addTask(Task task) {
-		
+		iTaskDataHandler.addTask(task);
 	}
 
 	@Override

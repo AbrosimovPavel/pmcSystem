@@ -16,9 +16,15 @@
     <link href="${pageContext.request.contextPath}/web-resources/bootstrap/css/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath}/web-resources/bootstrap/css/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
     
+    <script src="${pageContext.request.contextPath}/web-resources/js/vendor/jquery.ui.widget.js"></script>
+    <script src="${pageContext.request.contextPath}/web-resources/js/jquery.iframe-transport.js"></script>
+    <script src="${pageContext.request.contextPath}/web-resources/js/jquery.fileupload.js"></script>
     <script src="${pageContext.request.contextPath}/web-resources/js/jquery.1.9.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/web-resources/bootstrap/js/bootstrap.min.js"></script> 
     <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"><!-- --></script>
+    
+    <link href="${pageContext.request.contextPath}/web-resources/css/dropzone.css" type="text/css" rel="stylesheet" />
+    <script src="${pageContext.request.contextPath}/web-resources/js/myuploadfunction.js"></script>
 		<!-- 
 		<script>
 		$(document).ready(function() {
@@ -100,10 +106,12 @@
         -->
                 <!-- button panel -->
         <!-- Button to trigger modal -->
-         <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+         <a href="#addFiles" role="button" class="btn" data-toggle="modal">add files</a>
+         <a href="#addTask" role="button" class="btn" data-toggle="modal">add Task</a>
           
          <!-- Modal -->
-         <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <!-- add Files -->
+         <div id="addFiles" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
            <div class="modal-header">
              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
              <h3 id="myModalLabel">Add Files</h3>
@@ -126,17 +134,38 @@
 		                <th>File Name</th>
 		                <th>File Size</th>
 		                <th>File Type</th>
-		                <th>Download</th>
+		                <th>Delete</th>
 		            </tr>
 		        </table>
-		     </div>
+		
+		    </div>
              <!-- end content -->
            </div>
            <div class="modal-footer">
              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
              <button class="btn btn-primary">Save changes</button>
            </div>
-         </div>            
+         </div>  
+         <!-- end add Files -->  
+         <!-- add project -->
+         <div id="addTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <form:form htmlEscape="true" action="addtask.html" method="POST" commandName="task">
+               <div class="modal-header">
+	             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	             <h3 id="myModalLabel">Add Task</h3>
+	           </div>
+	           <div class="modal-body">
+	             <!-- content -->
+	               <form:input path="taskCode" type="text"/>
+	             <!-- end content -->
+	           </div>
+	           <div class="modal-footer">
+	             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	             <button class="btn btn-primary" type="submit">Save changes</button>
+	           </div>
+           </form:form>
+         </div>  
+         <!-- end add project -->                  
         <!-- end button panel -->     
         
         <div class="span9" style="float:right;">

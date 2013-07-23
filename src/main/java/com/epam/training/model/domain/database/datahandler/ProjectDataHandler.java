@@ -28,7 +28,9 @@ public class ProjectDataHandler implements IProjectDataHandler {
 
 	@Override
 	public void addProject(Project proj) {
-		
+		Session session = sessionFactory.openSession();
+		session.save(proj);
+		session.close();
 	}
 
 	@Override

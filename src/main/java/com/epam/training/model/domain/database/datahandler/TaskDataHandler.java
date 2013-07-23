@@ -37,7 +37,9 @@ public class TaskDataHandler implements ITaskDataHandler {
 
 	@Override
 	public void addTask(Task task) {
-		
+		Session session = sessionFactory.openSession();
+		session.save(task);
+		session.close();
 	}
 
 	@Override

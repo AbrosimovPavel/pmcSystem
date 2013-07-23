@@ -12,7 +12,6 @@
 <head>
 	<meta charset="utf-8">
 	<script src="${pageContext.request.contextPath}/web-resources/js/jquery.1.9.1.min.js"></script>
-	
 	<script src="${pageContext.request.contextPath}/web-resources/js/vendor/jquery.ui.widget.js"></script>
 	<script src="${pageContext.request.contextPath}/web-resources/js/jquery.iframe-transport.js"></script>
 	<script src="${pageContext.request.contextPath}/web-resources/js/jquery.fileupload.js"></script>
@@ -43,7 +42,27 @@
 			<h3 id="myModalLabel">Modal header</h3>
 		</div>
 		<div class="modal-body">
-			<p>One fine body…</p>
+			<div style="width: 500px; padding: 20px">
+
+        <input id="fileupload" type="file" name="files[]"
+            data-url="<c:url value="/upload.html" />" multiple>
+
+        <div id="dropzone" class="fade well">Drop files here</div>
+
+        <div id="progress" class="progress">
+            <div class="bar" style="width: 0%;"></div>
+        </div>
+
+        <table id="uploaded-files" class="table">
+            <tr>
+                <th>File Name</th>
+                <th>File Size</th>
+                <th>File Type</th>
+                <th>Download</th>
+            </tr>
+        </table>
+
+    </div>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -53,26 +72,7 @@
 	<!-- end button panel -->
 
 
-	<div style="width: 500px; padding: 20px">
 
-		<input id="fileupload" type="file" name="files[]"
-			data-url="<c:url value="/upload.html" />" multiple>
-
-		<div id="dropzone" class="fade well">Drop files here</div>
-
-		<div id="progress" class="progress">
-			<div class="bar" style="width: 0%;"></div>
-		</div>
-
-		<table id="uploaded-files" class="table">
-			<tr>
-				<th>File Name</th>
-				<th>File Size</th>
-				<th>File Type</th>
-				<th>Download</th>
-			</tr>
-		</table>
-
-	</div>
+	
 </body>
 </html>

@@ -34,6 +34,12 @@ public class FileController {
 	 * @param response : HttpServletResponse auto passed
 	 * @return LinkedList<FileMeta> as json format
 	 ****************************************************/
+	
+	@RequestMapping(value = "/upload.html", method = RequestMethod.GET)
+	public String get(){
+		return "forward:upload.html";
+	}
+	
 	@RequestMapping(value="/upload.html", method = RequestMethod.POST)
 	public @ResponseBody LinkedList<FileMeta> upload(MultipartHttpServletRequest request, HttpServletResponse response) {
  
