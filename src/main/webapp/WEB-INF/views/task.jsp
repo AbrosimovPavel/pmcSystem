@@ -147,7 +147,7 @@
            </div>
          </div>  
          <!-- end add Files -->  
-         <!-- add project -->
+         <!-- add task -->
          <div id="addTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
            <form:form htmlEscape="true" action="addtask.html?id=${project.projectId}" method="POST" commandName="task">
                <div class="modal-header">
@@ -176,6 +176,11 @@
                        <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i>
                       </span>
                    </div>
+                   <select>
+                   <c:forEach  var="status" items="${taskStatus}">
+					  <option><c:out value="${status.name}" /></option>
+       			   </c:forEach>
+       			   </select>
         <!-- end content -->
 	           </div>
 	           <div class="modal-footer">
