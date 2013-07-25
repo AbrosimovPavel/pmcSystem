@@ -149,15 +149,34 @@
          <!-- end add Files -->  
          <!-- add project -->
          <div id="addTask" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-           <form:form htmlEscape="true" action="addtask.html" method="POST" commandName="task">
+           <form:form htmlEscape="true" action="addtask.html?id=${project.projectId}" method="POST" commandName="task">
                <div class="modal-header">
 	             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 	             <h3 id="myModalLabel">Add Task</h3>
 	           </div>
 	           <div class="modal-body">
 	             <!-- content -->
+                   <label>Task code</label>	             
 	               <form:input path="taskCode" type="text"/>
-	             <!-- end content -->
+	               <label>Task summary</label>
+                   <form:input path="taskSummary" class="input-xlarge" type="text"/>
+                   <label>Task text</label>
+                   <form:textarea path="taskText"/>
+                   <label>Planed start date</label>
+                   <div class="input-append">
+                      <form:input path="startDate" data-format="yyyy-MM-dd" type="date"/>
+                      <span class="add-on">
+                       <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i>
+                      </span>
+                   </div>
+                   <label>Original estimate</label>
+                   <div class="input-append">
+                      <form:input path="originalEstimate" data-format="yyyy-MM-dd" type="date"/>
+                      <span class="add-on">
+                       <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i>
+                      </span>
+                   </div>
+        <!-- end content -->
 	           </div>
 	           <div class="modal-footer">
 	             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>

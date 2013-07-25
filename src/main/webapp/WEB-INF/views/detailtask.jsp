@@ -52,7 +52,7 @@
                <div class="span8" style="padding-left:35px;">
                    <h5>Details</h5><hr>
                    <p> Project Name: <c:out value="${task.project.projectName}"/></p>
-                   <p>Task summary: <c:out value="${task.taskSuammary}" /></p>
+                   <p>Task summary: <c:out value="${task.taskSummary}" /></p>
                    <p>Task status: <c:out value="${task.taskStatus.name}" /></p>
                </div>
                <div class="span3" style="float:right;" >

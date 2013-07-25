@@ -32,7 +32,7 @@ public class Task {
 	private String taskCode;
 
 	@Column(name = "task_summary")
-	private String taskSuammary;
+	private String taskSummary;
 
 	@Column(name = "task_text")
 	private String taskText;
@@ -88,7 +88,7 @@ public class Task {
 		super();
 		this.taskId = taskId;
 		this.taskCode = taskCode;
-		this.taskSuammary = taskSuammary;
+		this.taskSummary = taskSuammary;
 		this.taskText = taskText;
 		this.creationDate = creationDate;
 		this.startDate = startDate;
@@ -113,14 +113,6 @@ public class Task {
 
 	public void setTaskCode(String taskCode) {
 		this.taskCode = taskCode;
-	}
-
-	public String getTaskSuammary() {
-		return taskSuammary;
-	}
-
-	public void setTaskSuammary(String taskSuammary) {
-		this.taskSuammary = taskSuammary;
 	}
 
 	public String getTaskText() {
@@ -201,6 +193,14 @@ public class Task {
 
 	public void setAssignments(Set<Assignment> assignments) {
 		this.assignments = assignments;
+	}
+
+	public String getTaskSummary() {
+		return taskSummary;
+	}
+
+	public void setTaskSummary(String taskSummary) {
+		this.taskSummary = taskSummary;
 	}
 
 }
