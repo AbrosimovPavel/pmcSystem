@@ -71,13 +71,15 @@ public class TaskController {
 		//ui.addAttribute("assignment", assignment);
 		
 		return "task";
+		
 	}
 	
 	@RequestMapping(value="/addtask", params = {"id"}, method = RequestMethod.POST)
-	public String addTask(@ModelAttribute("task") Task task, @RequestParam(value = "id") int id, BindingResult result){
+	public String addTask(@ModelAttribute("task") Task task, @RequestParam(value = "id") int id, @RequestParam int statusId , BindingResult result){
 		task.setProject(projectService.getProjectById(id));
 		iTaskService.addTask(task);
-		return "redirect:/task.html?id=" + id;
+		return "addtask";
+		//return "redirect:/task.html?id=" + id;
 	}
 	
 	@InitBinder

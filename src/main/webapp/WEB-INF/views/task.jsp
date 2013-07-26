@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 
 <!DOCTYPE html>
@@ -176,11 +176,11 @@
                        <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i>
                       </span>
                    </div>
-                   <select>
-                   <c:forEach  var="status" items="${taskStatus}">
-					  <option><c:out value="${status.name}" /></option>
-       			   </c:forEach>
-       			   </select>
+                   <label>Task status</label>
+       			   <form:select path="taskStatus.statusID">
+       			      <form:option value="0">Select One</form:option>
+       			      <form:options items="${taskStatus}"  itemValue="statusID" itemname="name"/>
+       			   </form:select>
         <!-- end content -->
 	           </div>
 	           <div class="modal-footer">
@@ -212,7 +212,7 @@
                         <tr  onclick="location.href='detailtask.html?id=${tasks.taskId}'">
                             <td><c:out value="${tasks.taskId}" /></td>
                             <td><c:out value="${tasks.taskCode}" /></td>
-                            <td><c:out value="${tasks.taskSuammary}" /></td>
+                            <td><c:out value="${tasks.taskSummary}" /></td>
                             <td><c:out value="${tasks.taskStatus.name}" /></td>
                            <!-- > <c:if test="${!empty assignment}">
                                 <td><c:out value="${assignment.employee.firstName} ${assignment.employee.lastName}" /></td>
